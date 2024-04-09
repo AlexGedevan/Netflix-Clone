@@ -1,9 +1,11 @@
 import Header from "./components/header/Header";
 import { Outlet } from "react-router-dom";
+import { useMovies } from "./context/moviesContext";
 function AppLayout() {
+  const { hasSignedIn } = useMovies();
   return (
     <div>
-      <Header />
+      {hasSignedIn && <Header />}
       <Outlet />
     </div>
   );
