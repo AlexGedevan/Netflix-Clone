@@ -1,6 +1,6 @@
 .home-page {
   background-color: #171819;
-  /* height: 100vh; */
+  height: 100vh;
 }
 
 .home-introduction {
@@ -20,4 +20,30 @@
 
 .home-introduction p {
   width: 500px;
+}
+
+.movies-list {
+  display: flex;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.arrow-left,
+.arrow-right {
+  height: 20px;
+  width: 20px;
+  color: red;
+  position: absolute;
+}
+.arrow-left {
+  top: 40%;
+  left: -30px;
+}
+
+.arrow-right {
+  top: top;
+}
+
+.released-last-year-movies {
+  position: relative;
 }

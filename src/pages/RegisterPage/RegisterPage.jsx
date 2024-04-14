@@ -40,6 +40,8 @@ function RegisterPage() {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        user.displayName = username;
+        console.log(user);
         setCurrentUser(user);
         navigate("/home");
       })

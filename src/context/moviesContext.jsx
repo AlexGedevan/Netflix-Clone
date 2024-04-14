@@ -6,14 +6,14 @@ function MoviesProvider({ children }) {
 
   const [currentUser, setCurrentUser] = useState(storedItems);
   const [error, setError] = useState("");
-
+  const [query, setQuery] = useState("");
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(currentUser));
   }, [currentUser]);
 
   return (
     <MoviesContext.Provider
-      value={{ currentUser, setCurrentUser, error, setError }}
+      value={{ currentUser, setCurrentUser, error, setError, query, setQuery }}
     >
       {children}
     </MoviesContext.Provider>

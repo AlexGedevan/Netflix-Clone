@@ -1,0 +1,10 @@
+.movie-div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 23%;
+}
+
+.movie-name {
+  text-align: center;
+}
