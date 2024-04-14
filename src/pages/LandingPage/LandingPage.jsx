@@ -1,7 +1,29 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import landingImage from "../../images/landingImage.jpg";
 import "./landingPage.css";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
+
 function LandingPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+
+  function handleSignIn() {
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+
+        navigate("/home");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  }
+
   return (
     <div className="landing-page">
       <img src={landingImage} className="landing-image" alt="Landing img" />
@@ -28,13 +50,17 @@ function LandingPage() {
             className="input-email"
             type="text"
             placeholder="Email Address"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
           />
           <input
             className="input-email"
             type="text"
-            placeholder="Email Address"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
           />
-          <button className="get-started-btn">
+          <button className="get-started-btn" onClick={handleSignIn}>
             <p>Sign in</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
