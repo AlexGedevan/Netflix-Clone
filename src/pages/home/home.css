@@ -1,0 +1,23 @@
+.home-page {
+  background-color: #171819;
+  /* height: 100vh; */
+}
+
+.home-introduction {
+  width: 90%;
+  margin: auto;
+  color: white;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-introduction h2 {
+  font-size: 55px;
+  font-weight: 600;
+}
+
+.home-introduction p {
+  width: 500px;
+}

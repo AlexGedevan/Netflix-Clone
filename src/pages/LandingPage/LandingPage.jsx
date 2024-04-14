@@ -2,15 +2,25 @@ import { Link, useNavigate } from "react-router-dom";
 import landingImage from "../../images/landingImage.jpg";
 import "./landingPage.css";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useMovies } from "../../context/moviesContext";
 
 function LandingPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { setCurrentUser } = useMovies();
-  const navigate = useNavigate();
   const [signInError, setSignInError] = useState("");
+
+  const { setCurrentUser, currentUser } = useMovies();
+  const navigate = useNavigate();
+
+  useEffect(
+    function () {
+      if (currentUser) {
+        navigate("/home");
+      }
+    },
+    [currentUser, navigate]
+  );
 
   function handleSignIn() {
     const auth = getAuth();
