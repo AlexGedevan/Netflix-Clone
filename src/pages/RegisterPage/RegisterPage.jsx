@@ -1,8 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
 import landingImage from "../../images/landingImage.jpg";
 import "./RegisterPage.css";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
+import { useEffect, useState } from "react";
 import { getFirestore } from "firebase/firestore";
 import { app } from "../../firebase";
 import { useMovies } from "../../context/moviesContext";
@@ -17,7 +21,16 @@ function RegisterPage() {
 
   const db = getFirestore(app);
 
-  const { setCurrentUser } = useMovies();
+  const { setCurrentUser, currentUser } = useMovies();
+
+  useEffect(
+    function () {
+      if (currentUser) {
+        navigate("/home");
+      }
+    },
+    [currentUser, navigate]
+  );
 
   function handleRegister() {
     if (password !== comfirmPassword) throw new Error("Passwords dont match");
@@ -27,7 +40,6 @@ function RegisterPage() {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        user.displayName = username;
         setCurrentUser(user);
         navigate("/home");
       })

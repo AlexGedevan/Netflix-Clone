@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useMovies } from "../../context/moviesContext";
 import { useNavigate } from "react-router-dom";
 
+import "./home.css";
+
 function Home() {
   const { setError, currentUser } = useMovies();
   const navigate = useNavigate();
@@ -14,7 +16,18 @@ function Home() {
     },
     [currentUser, navigate, setError]
   );
-  return <div>Home</div>;
+  return (
+    <div className="home-page">
+      <div className="home-introduction">
+        <h2>Movies</h2>
+        <p>
+          Movies move us like nothing else can, whether they’re scary, funny,
+          dramatic, romantic or anywhere in-between. So many titles, so much to
+          experience.
+        </p>
+      </div>
+    </div>
+  );
 }
 
 export default Home;

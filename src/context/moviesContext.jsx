@@ -1,9 +1,16 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const MoviesContext = createContext();
 function MoviesProvider({ children }) {
-  const [currentUser, setCurrentUser] = useState(null);
+  const storedItems = JSON.parse(localStorage.getItem("user"));
+
+  const [currentUser, setCurrentUser] = useState(storedItems);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("user", JSON.stringify(currentUser));
+  }, [currentUser]);
+
   return (
     <MoviesContext.Provider
       value={{ currentUser, setCurrentUser, error, setError }}
