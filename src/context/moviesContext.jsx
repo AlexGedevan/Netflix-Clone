@@ -2,7 +2,15 @@ import { createContext, useContext, useState } from "react";
 
 const MoviesContext = createContext();
 function MoviesProvider({ children }) {
-  return <MoviesContext.Provider value={{}}>{children}</MoviesContext.Provider>;
+  const [currentUser, setCurrentUser] = useState(null);
+  const [error, setError] = useState("");
+  return (
+    <MoviesContext.Provider
+      value={{ currentUser, setCurrentUser, error, setError }}
+    >
+      {children}
+    </MoviesContext.Provider>
+  );
 }
 
 function useMovies() {

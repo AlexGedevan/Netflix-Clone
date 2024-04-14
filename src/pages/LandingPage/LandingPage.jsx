@@ -3,12 +3,14 @@ import landingImage from "../../images/landingImage.jpg";
 import "./landingPage.css";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
+import { useMovies } from "../../context/moviesContext";
 
 function LandingPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const { setCurrentUser } = useMovies();
   const navigate = useNavigate();
+  const [signInError, setSignInError] = useState("");
 
   function handleSignIn() {
     const auth = getAuth();
@@ -16,11 +18,12 @@ function LandingPage() {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-
+        setCurrentUser(user);
         navigate("/home");
       })
       .catch((error) => {
         console.log(error.message);
+        setSignInError("Invalid credentials!");
       });
   }
 
@@ -77,6 +80,7 @@ function LandingPage() {
               />
             </svg>
           </button>
+          <p className="sign-in-error-message">{signInError}</p>
         </div>
       </div>
     </div>

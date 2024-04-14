@@ -3,6 +3,7 @@ import AppLayout from "./AppLayout";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import Home from "./pages/home/Home";
+import Error from "./components/error/Error";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <Home />,
+      },
+      {
+        path: "/error",
+        element: <Error />,
       },
     ],
   },
