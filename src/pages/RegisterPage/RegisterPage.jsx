@@ -5,6 +5,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { getFirestore } from "firebase/firestore";
 import { app } from "../../firebase";
+import { useMovies } from "../../context/moviesContext";
 
 function RegisterPage() {
   const [email, setEmail] = useState("");
@@ -16,6 +17,8 @@ function RegisterPage() {
 
   const db = getFirestore(app);
 
+  const { setCurrentUser } = useMovies();
+
   function handleRegister() {
     if (password !== comfirmPassword) throw new Error("Passwords dont match");
 
@@ -25,7 +28,7 @@ function RegisterPage() {
       .then((userCredential) => {
         const user = userCredential.user;
         user.displayName = username;
-
+        setCurrentUser(user);
         navigate("/home");
       })
       .catch((error) => {

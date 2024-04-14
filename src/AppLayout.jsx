@@ -2,10 +2,10 @@ import Header from "./components/header/Header";
 import { Outlet } from "react-router-dom";
 import { useMovies } from "./context/moviesContext";
 function AppLayout() {
-  const { hasSignedIn } = useMovies();
+  const { currentUser } = useMovies();
   return (
     <div>
-      {hasSignedIn && <Header />}
+      {currentUser && <Header />}
       <Outlet />
     </div>
   );

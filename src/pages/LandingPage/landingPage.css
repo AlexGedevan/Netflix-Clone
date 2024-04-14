@@ -118,3 +118,7 @@ option {
   justify-content: center;
   gap: 10px;
 }
+
+.sign-in-error-message {
+  color: red;
+}

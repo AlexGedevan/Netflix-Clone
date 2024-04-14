@@ -1,9 +1,35 @@
-.header {
-  height: 55px;
+.section-header {
   background-color: black;
+  height: 55px;
+}
+.header {
+  width: 90%;
   display: flex;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header-title {
   color: red;
+}
+
+.header-right {
+  align-items: center;
+}
+
+.join-now-btn {
+  font-size: 14px;
+  padding: 8px 20px;
+  background-color: red;
+  border: none;
+  border-radius: 2px;
+  color: white;
+}
+
+.log-out-btn {
+  padding: 6px 16px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
 }

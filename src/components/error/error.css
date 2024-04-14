@@ -1,0 +1,20 @@
+.error-page {
+  height: 100vh;
+  background-color: gray;
+  position: relative;
+}
+
+.error-message {
+  font-size: 48px;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.sign-in-link {
+  font-size: 38px;
+  color: rgb(146, 3, 3);
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+}
