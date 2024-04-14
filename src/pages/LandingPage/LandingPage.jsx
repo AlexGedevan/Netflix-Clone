@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import landingImage from "../../images/landingImage.jpg";
 import "./landingPage.css";
 function LandingPage() {
@@ -11,7 +12,9 @@ function LandingPage() {
             <option>English</option>
             <option>ქართული</option>
           </select>
-          <button className="sign-in-btn">Sign In</button>
+          <Link to="/register" className="sign-in-btn">
+            Sign Up
+          </Link>
         </div>
       </div>
       <div className="landing-absolute-main">
@@ -26,8 +29,13 @@ function LandingPage() {
             type="text"
             placeholder="Email Address"
           />
+          <input
+            className="input-email"
+            type="text"
+            placeholder="Email Address"
+          />
           <button className="get-started-btn">
-            <p>Get Started</p>
+            <p>Sign in</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
