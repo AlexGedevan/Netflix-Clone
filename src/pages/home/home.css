@@ -34,6 +34,7 @@
   width: 20px;
   color: red;
   position: absolute;
+  cursor: pointer;
 }
 .arrow-left {
   top: 40%;
@@ -41,7 +42,8 @@
 }
 
 .arrow-right {
-  top: top;
+  top: 40%;
+  right: -30px;
 }
 
 .released-last-year-movies {
