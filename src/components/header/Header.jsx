@@ -22,6 +22,7 @@ function Header() {
           type="text"
           placeholder="Enter movie name..."
           onChange={(e) => setQuery(e.target.value)}
+          className="header-input"
         />
         <div className="header-right">
           <p style={{ color: "white" }}>UNLIMITED TV SHOWS & MOVIES</p>

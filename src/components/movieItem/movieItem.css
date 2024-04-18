@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 12px;
   min-width: 23%;
+  transition: all 0.3s;
 }
 
 .movie-name {
