@@ -2,7 +2,7 @@
   background-color: black;
   height: 55px;
   width: 100%;
-  position: fixed;
+  /* position: fixed; */
 }
 .header {
   width: 90%;

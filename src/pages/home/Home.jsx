@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./home.css";
 import MovieItem from "../../components/movieItem/MovieItem";
 import { getDatabase, onValue, ref } from "firebase/database";
+import CategorieItem from "../../components/categorieItem/CategorieItem";
 
 const initialState = {
   allMovies: [],
@@ -88,20 +89,7 @@ function Home() {
         </div>
         <div className="all-movies-container">
           {moviesCategory.map((category) => {
-            return (
-              <div key={category}>
-                <h2 className="movie-category">{category}</h2>
-                <div className="all-movies-in-row">
-                  {allMovies.map((movie) => {
-                    return (
-                      movie.type === category && (
-                        <MovieItem movie={movie} key={movie.id} />
-                      )
-                    );
-                  })}
-                </div>
-              </div>
-            );
+            return <CategorieItem category={category} allMovies={allMovies} />;
           })}
         </div>
       </div>
