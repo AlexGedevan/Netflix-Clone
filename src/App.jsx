@@ -5,6 +5,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import Home from "./pages/home/Home";
 import Error from "./components/error/Error";
 import Subsriptions from "./pages/subscriptions/Subsriptions";
+import MoviePage from "./pages/MoviePage/MoviePage";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/subscriptions",
         element: <Subsriptions />,
+      },
+      {
+        path: "/MoviePage/:id",
+        element: <MoviePage />,
       },
     ],
   },

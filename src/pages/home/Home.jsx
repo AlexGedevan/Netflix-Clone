@@ -6,46 +6,55 @@ import MovieItem from "../../components/movieItem/MovieItem";
 import { getDatabase, onValue, ref } from "firebase/database";
 import CategorieItem from "../../components/categorieItem/CategorieItem";
 
-const initialState = {
-  allMovies: [],
-  moviesCategory: [],
-  searchedMovies: [],
-  translate: 0,
-};
+// const initialState = {
+//   allMovies: [],
+//   moviesCategory: [],
+//   searchedMovies: [],
+//   translate: 0,
+// };
 
-function reducer(state, action) {
-  switch (action.type) {
-    case "translate/forward":
-      return { ...state, translate: state.translate - 400 };
-    case "translate/back":
-      return { ...state, translate: state.translate + 400 };
-    case "get/all/movies":
-      return { ...state, allMovies: action.payload };
-    case "get/popular/movies":
-      return {
-        ...state,
-        popularMovies: action.payload,
-      };
-    case "get/adventure/movies":
-      return {
-        ...state,
-        adventureMovies: action.payload,
-      };
-    case "add/category":
-      return {
-        ...state,
-        moviesCategory: [...state.moviesCategory, action.payload],
-      };
+// function reducer(state, action) {
+//   switch (action.type) {
+//     case "translate/forward":
+//       return { ...state, translate: state.translate - 400 };
+//     case "translate/back":
+//       return { ...state, translate: state.translate + 400 };
+//     case "get/all/movies":
+//       return { ...state, allMovies: action.payload };
+//     case "get/popular/movies":
+//       return {
+//         ...state,
+//         popularMovies: action.payload,
+//       };
+//     case "get/adventure/movies":
+//       return {
+//         ...state,
+//         adventureMovies: action.payload,
+//       };
+//     case "add/category":
+//       return {
+//         ...state,
+//         moviesCategory: [...state.moviesCategory, action.payload],
+//       };
 
-    default:
-      console.log("error");
-  }
-}
+//     default:
+//       console.log("error");
+//   }
+// }
 
 function Home() {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  const { translate, popularMovies, allMovies, moviesCategory } = state;
-  const { setError, currentUser, query } = useMovies();
+  // const [state, dispatch] = useReducer(reducer, initialState);
+  // const { translate, popularMovies, allMovies, moviesCategory } = state;
+  const {
+    setError,
+    currentUser,
+    query,
+    translate,
+    popularMovies,
+    allMovies,
+    moviesCategory,
+    dispatch,
+  } = useMovies();
 
   const navigate = useNavigate();
   useEffect(() => {

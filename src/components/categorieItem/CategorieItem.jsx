@@ -22,7 +22,7 @@ function CategorieItem({ category, allMovies }) {
           {allMovies.map((movie) => {
             return (
               movie.type === category && (
-                <MovieItem movie={movie} key={movie.id} />
+                <MovieItem movie={movie} key={movie.id} allMovies={allMovies} />
               )
             );
           })}

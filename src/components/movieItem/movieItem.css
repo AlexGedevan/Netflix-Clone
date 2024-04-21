@@ -6,6 +6,11 @@
   transition: all 0.3s;
   width: 300px;
   height: 190px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.movie-div:hover {
+  padding: 10px;
 }
 
 .movie-image {
