@@ -4,6 +4,7 @@ import LandingPage from "./pages/LandingPage/LandingPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import Home from "./pages/home/Home";
 import Error from "./components/error/Error";
+import Subsriptions from "./pages/subscriptions/Subsriptions";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/error",
         element: <Error />,
+      },
+      {
+        path: "/subscriptions",
+        element: <Subsriptions />,
       },
     ],
   },

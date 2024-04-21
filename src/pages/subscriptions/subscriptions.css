@@ -1,0 +1,138 @@
+.page-subscriptions {
+  background-color: #171819;
+  height: 100vh;
+}
+
+.subscriptions-content {
+  padding-top: 20px;
+}
+
+.subscriptions-page-title {
+  color: rgb(140, 140, 140);
+  font-size: 40px;
+  text-align: center;
+}
+
+.subscriptions-page-info {
+  color: rgb(140, 140, 140);
+  font-size: 22px;
+  text-align: center;
+}
+
+.standart-subscription {
+  background-color: rgb(140, 140, 140);
+  width: 350px;
+  height: 450px;
+  border-radius: 10px;
+}
+.premium-subscription {
+  background-color: rgb(155, 38, 38);
+  width: 350px;
+  height: 450px;
+  border-radius: 10px;
+}
+
+.subscriptions {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.standart-title {
+  font-size: 32px;
+}
+
+.standart-price {
+  font-size: 22px;
+  text-decoration: underline;
+}
+
+.standart-info {
+  font-size: 22px;
+}
+
+.standart-purchase-btn {
+  text-decoration: none;
+  background-color: red;
+  border: none;
+  border-radius: 10px;
+  width: 70%;
+  font-size: 18px;
+  padding: 12px 20px;
+  margin: auto;
+  margin-top: 40px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s;
+}
+.standart-purchase-btn:hover {
+  color: white;
+  background-color: black;
+  padding: 24px 20px;
+}
+
+.standart-subscription {
+  position: relative;
+}
+.standart-subscription-content {
+  padding: 24px 12px;
+  position: absolute;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.premium-title {
+  font-size: 32px;
+}
+
+.premium-price {
+  font-size: 22px;
+  text-decoration: underline;
+}
+
+.premium-info {
+  font-size: 22px;
+}
+
+.premium-purchase-btn {
+  text-decoration: none;
+  background-color: red;
+  border: none;
+  border-radius: 10px;
+  width: 70%;
+  font-size: 18px;
+  padding: 12px 20px;
+  margin: auto;
+  margin-top: 40px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s;
+}
+.premium-purchase-btn:hover {
+  color: white;
+  background-color: black;
+  padding: 24px 20px;
+}
+
+.premium-subscription {
+  position: relative;
+}
+.premium-subscription-content {
+  padding: 24px 12px;
+  position: absolute;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

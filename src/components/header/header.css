@@ -15,6 +15,7 @@
 
 .header-title {
   color: red;
+  text-decoration: none;
 }
 
 .header-right {
@@ -28,6 +29,7 @@
   border: none;
   border-radius: 2px;
   color: white;
+  cursor: pointer;
 }
 
 .log-out-btn {

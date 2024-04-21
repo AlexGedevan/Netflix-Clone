@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useMovies } from "../../context/moviesContext";
 import "./header.css";
 import { useState } from "react";
@@ -17,7 +17,9 @@ function Header() {
   return (
     <div className="section-header">
       <div className="header">
-        <h1 className="header-title">Netflix</h1>
+        <Link to="/home" className="header-title">
+          Netflix
+        </Link>
         <input
           type="text"
           placeholder="Enter movie name..."
@@ -26,7 +28,9 @@ function Header() {
         />
         <div className="header-right">
           <p style={{ color: "white" }}>UNLIMITED TV SHOWS & MOVIES</p>
-          <button className="join-now-btn">{currentUser.displayName}</button>
+          <Link to="/subscriptions" className="join-now-btn">
+            Subscribe
+          </Link>
           <button className="log-out-btn" onClick={handleLogOut}>
             Log Out
           </button>
